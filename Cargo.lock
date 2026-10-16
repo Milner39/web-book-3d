@@ -4164,7 +4164,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "web-book-3d"
+name = "web-book-3d-app"
 version = "0.1.0"
 dependencies = [
  "serde",
@@ -4173,6 +4173,10 @@ dependencies = [
  "tauri-build",
  "tauri-plugin-opener",
 ]
+
+[[package]]
+name = "web-book-3d-server"
+version = "0.1.0"
 
 [[package]]
 name = "web-sys"

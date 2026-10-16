@@ -10,6 +10,6 @@
 
 <hr>
 
-Tauri/Svelte based website that uses Three.js and the "HTML-in-Canvas" API to 
+Tauri/Svelte based application/website that uses Three.js and the "HTML-in-Canvas" API to 
 render a book with pages that can be customised with a variety of HTML content, 
 animation, and more.

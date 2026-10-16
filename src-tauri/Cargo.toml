@@ -1,7 +1,7 @@
 [package]
-name = "web-book-3d"
+name = "web-book-3d-app"
 version = "0.1.0"
-description = "A Tauri App"
+description = "Tauri app for web-book-3d"
 authors = ["Milner39"]
 edition = "2024"
 
@@ -11,8 +11,14 @@ edition = "2024"
 # The `_lib` suffix may seem redundant but it is necessary
 # to make the lib name unique and wouldn't conflict with the bin name.
 # This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
-name = "web_book_3d_lib"
+name = "web_book_3d_app_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
+
+# Keep the installed executable named after the product rather than the package.
+# `path` is required because the bin name no longer matches the package name.
+[[bin]]
+name = "web-book-3d"
+path = "src/main.rs"
 
 [build-dependencies]
 tauri-build = { version = "2", features = [] }
@@ -22,12 +28,3 @@ tauri = { version = "2", features = [] }
 tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-
-
-# Read the optimization guideline for more details: https://tauri.app/concept/size/#cargo-configuration
-[profile.release]
-codegen-units = 1
-lto = true
-opt-level = 3
-panic = "abort"
-strip = true

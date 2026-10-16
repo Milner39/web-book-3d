@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-  web_book_3d_lib::run()
+  web_book_3d_app_lib::run()
 }
