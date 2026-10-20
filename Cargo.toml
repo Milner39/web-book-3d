@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["src-axum", "src-tauri"]
+members = ["src-axum", "src-shared", "src-tauri"]
 
 # Profiles only take effect in the workspace root, not in member crates
 # Read the optimization guideline for more details: https://tauri.app/concept/size/#cargo-configuration

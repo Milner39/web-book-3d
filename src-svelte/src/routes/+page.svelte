@@ -1,13 +1,16 @@
 <script lang="ts">
-  import { invoke } from "@tauri-apps/api/core";
+  import { getGreeting } from "$lib/api/greet";
 
   let name = $state("");
   let greetMsg = $state("");
 
   async function greet(event: Event) {
     event.preventDefault();
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    greetMsg = await invoke("greet", { name });
+    try {
+      greetMsg = await getGreeting(name);
+    } catch (error) {
+      greetMsg = `Error: ${error instanceof Error ? error.message : error}`;
+    }
   }
 </script>
 

@@ -5,7 +5,6 @@
   "identifier": "com.milner39.web-book-3d",
   "build": {
     "beforeDevCommand": "deno task dev",
-    "devUrl": "http://localhost:1420",
     "beforeBuildCommand": "deno task build",
     "frontendDist": "../src-svelte/build"
   },

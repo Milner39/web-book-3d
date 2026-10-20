@@ -3,7 +3,8 @@
 
   "material-icon-theme.folders.associations": {
     "src-tauri": "src-tauri",
-    "src-axum": "rust",
+    "src-axum": "server",
+    "src-shared": "rust",
     "src-svelte": "svelte"
   }
 }

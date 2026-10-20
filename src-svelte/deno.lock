@@ -1,6 +1,7 @@
 {
   "version": "5",
   "specifiers": {
+    "npm:@standard-schema/spec@^1.1.0": "1.1.0",
     "npm:@sveltejs/adapter-static@^3.0.10": "3.0.10_@sveltejs+kit@2.70.3_@types+node@26.6.5",
     "npm:@sveltejs/kit@^2.65.1": "2.70.3_@sveltejs+vite-plugin-svelte@7.3.1_svelte@5.57.2_typescript@6.0.3_vite@8.3.4_@types+node@26.6.5",
     "npm:@sveltejs/vite-plugin-svelte@^7.1.2": "7.3.1_svelte@5.57.2_vite@8.3.4_@types+node@26.6.5",
@@ -11,7 +12,8 @@
     "npm:svelte-check@^4.6.0": "4.7.6_svelte@5.57.2_typescript@6.0.3",
     "npm:svelte@^5.56.3": "5.57.2",
     "npm:typescript@~6.0.3": "6.0.3",
-    "npm:vite@^8.0.16": "8.3.4_@types+node@26.6.5"
+    "npm:vite@^8.0.16": "8.3.4_@types+node@26.6.5",
+    "npm:zod@^4.6.7": "4.6.7"
   },
   "npm": {
     "@jridgewell/gen-mapping@0.3.13": {
@@ -579,11 +581,15 @@
     },
     "zimmerframe@1.1.5": {
       "integrity": "sha512-msJxIvYDYcoNL+PJsu+7qmpDWsYmAxTY+2TNYXXF0hzBzBk0BMecOqDOG/EckUoKCuKwObfbugIl8QpqHDXeFA=="
+    },
+    "zod@4.6.7": {
+      "integrity": "sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg=="
     }
   },
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@standard-schema/spec@^1.1.0",
         "npm:@sveltejs/adapter-static@^3.0.10",
         "npm:@sveltejs/kit@^2.65.1",
         "npm:@sveltejs/vite-plugin-svelte@^7.1.2",
@@ -594,7 +600,8 @@
         "npm:svelte-check@^4.6.0",
         "npm:svelte@^5.56.3",
         "npm:typescript@~6.0.3",
-        "npm:vite@^8.0.16"
+        "npm:vite@^8.0.16",
+        "npm:zod@^4.6.7"
       ]
     }
   }

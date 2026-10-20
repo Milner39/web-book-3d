@@ -1,12 +1,24 @@
 {
   "tasks": {
-    "dev:axum": "cargo run -p web-book-3d-server",
-    "dev:svelte": "deno task --cwd src-svelte dev",
-    "dev:tauri": "deno task --cwd src-svelte tauri dev",
-    "build:axum": "cargo build -p web-book-3d-server --profile server",
-    "build:svelte": "deno task --cwd src-svelte build",
-    "build:tauri": "deno task --cwd src-svelte tauri build",
-    "check:svelte": "deno task --cwd src-svelte check",
-    "tauri": "deno task --cwd src-svelte tauri"
+    "env": {
+      "description": "Run the given command with .env.local loaded",
+      "command": "deno task --env-file=.env.local --eval"
+    },
+    "env:dev": {
+      "description": "Run the given command with .env.dev, then .env.local, loaded",
+      "command": "deno task --env-file=.env.dev --env-file=.env.local --eval"
+    },
+
+
+    "dev:axum": "deno task env:dev 'cargo run -p web-book-3d-server'",
+    "dev:web": "deno task env:dev 'deno task --cwd src-svelte dev'",
+    "dev:tauri": "deno task env:dev 'deno task --cwd src-svelte tauri dev --config \"$TAURI_DEV_CONFIG\"'",
+
+    "build:axum": "deno task env 'cargo build -p web-book-3d-server --profile server'",
+    "build:web": "deno task env 'deno task --cwd src-svelte build'",
+    "build:tauri": "deno task env 'deno task --cwd src-svelte tauri build'",
+
+    "check:svelte": "deno task env 'deno task --cwd src-svelte check'",
+    "tauri": "deno task env 'deno task --cwd src-svelte tauri'"
   }
 }

@@ -12,6 +12,18 @@ const config = {
     adapter: adapter({
       fallback: "index.html",
     }),
+
+    // The env schemas live in `env/`, outside `src`
+    alias: {
+      "$public-env": "env/public.env.ts",
+    },
+
+    // Type-check `env/` along with `src`
+    typescript: {
+      config: (config) => {
+        config.include.push("../env/**/*.ts");
+      },
+    },
   },
 };
 
