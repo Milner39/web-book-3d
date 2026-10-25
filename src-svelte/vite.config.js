@@ -14,6 +14,7 @@ const env = BuildEnv.loadPartial(process.env);
 
 // Dev server settings come from .env.dev, which the root `dev:*` tasks load
 const AXUM_URL = env.AXUM_TARGET_URL;
+const BROWSER_HOST = env.VITE_BROWSER_HOST;
 const BROWSER_PORT = env.VITE_BROWSER_PORT;
 
 // Set by the Tauri CLI when it runs Vite for the desktop app
@@ -38,9 +39,9 @@ export default defineConfig(() => ({
 
 
   server: {
-    host: IS_TAURI && TAURI_HOST
-      ? TAURI_HOST
-      : "127.0.0.1",
+    host: IS_TAURI
+      ? TAURI_HOST ?? "127.0.0.1"
+      : BROWSER_HOST,
 
     port: IS_TAURI
       ? TAURI_PORT

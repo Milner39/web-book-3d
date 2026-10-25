@@ -1,0 +1,52 @@
+// Import style reset
+@use "./reset.scss";
+
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Meddon&display=swap');
+
+
+
+header {
+  background-color: red;
+}
+
+body {
+  --base-colour: #e1dace;
+  --texture-scale: 4;
+  --texture-size: calc(512px * var(--texture-scale));
+
+
+  // How far to lighten the texture's dark areas:
+  // - 0%    =  untouched
+  // - 100%  =  base colour
+  --texture-lift: 50%;
+
+  // Covering the multiplied texture with the base colour at `--texture-lift`
+  // opacity is the same as lightening the texture towards white 
+  // before multiplying
+  --texture-veil: color-mix(
+    in srgb,
+    var(--base-colour) var(--texture-lift),
+    transparent
+  );
+
+
+  background-color: var(--base-colour);
+  background-blend-mode: normal, multiply;
+
+  background-image:
+    linear-gradient(var(--texture-veil), var(--texture-veil)),
+    url("/textures/bg-gray-1024.webp");
+
+
+  // The vertical position is measured from the top, so the texture doesn't
+  // shift when the content height changes
+  background-position-x: center;
+  background-position-y: calc(50svh - var(--texture-size) / 2);
+  background-repeat: repeat;
+  background-size:
+    auto,
+    var(--texture-size) var(--texture-size);
+}

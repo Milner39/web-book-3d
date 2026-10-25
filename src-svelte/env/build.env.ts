@@ -9,6 +9,9 @@ const port = z.coerce.number().check(z.int(), z.minimum(1), z.maximum(65535));
 
 /** Every env var `vite.config.js` reads, through `process.env` */
 export const BuildEnv = defineEnv({
+  /** Interface the browser's Vite dev server listens on */
+  VITE_BROWSER_HOST: z.string(),
+
   /** Vite dev server port for the browser */
   VITE_BROWSER_PORT: port,
 
