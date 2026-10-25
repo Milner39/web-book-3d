@@ -13,15 +13,15 @@ header {
 }
 
 body {
-  --base-colour: #e1dace;
-  --texture-scale: 4;
+  --base-colour: #f0ede7;
+  --texture-scale: 3;
   --texture-size: calc(512px * var(--texture-scale));
 
 
   // How far to lighten the texture's dark areas:
   // - 0%    =  untouched
   // - 100%  =  base colour
-  --texture-lift: 50%;
+  --texture-lift: 70%;
 
   // Covering the multiplied texture with the base colour at `--texture-lift`
   // opacity is the same as lightening the texture towards white 
